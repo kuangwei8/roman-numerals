@@ -13,13 +13,14 @@ var toRoman = function (userInput) {
   return result;
 }
 
-
-
 $("form").submit(function(event){
   event.preventDefault();
   var userInput = parseInt($("#numbers").val());
   var result = toRoman(userInput);
-  $("#output").text(result);
+  if (userInput < 1 || userInput >3999){
+    alert("You can only count in Roman numerals from 1-3999.")
+  }else{
+  $("#output").text(result);}
 
   });
 });
